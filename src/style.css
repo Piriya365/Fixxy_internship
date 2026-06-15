@@ -1,0 +1,7 @@
+/* Custom styles can be added here. Bootstrap is loaded globally. */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
