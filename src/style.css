@@ -5,3 +5,181 @@ body {
   min-height: 100vh;
 }
 
+/* Page transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Base custom utility animations */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover effects */
+.hover-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(210, 101, 39, 0.35);
+  background-color: #1e1e1e !important;
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(210, 101, 39, 0.5);
+  transform: scale(1.03);
+}
+
+/* Navigation items */
+.nav-link-animated {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #d26527;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link-animated:hover::after {
+  width: 100%;
+  left: 0;
+}
+.nav-link-animated.text-warning::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Zoom Image Container */
+.zoom-img-container {
+  overflow: hidden;
+  position: relative;
+}
+.zoom-img {
+  transition: transform 0.5s ease;
+}
+.zoom-img-container:hover .zoom-img {
+  transform: scale(1.06);
+}
+
+/* Add to cart hover */
+.add-to-cart-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.add-to-cart-btn:hover {
+  color: #d26527 !important;
+  transform: scale(1.03);
+  text-shadow: 0 0 8px rgba(210, 101, 39, 0.3);
+}
+.add-to-cart-btn i {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.add-to-cart-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Form inputs */
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.form-control:focus {
+  border-color: #d26527 !important;
+  box-shadow: 0 0 0 0.25rem rgba(210, 101, 39, 0.25) !important;
+}
+
+/* Scroll Reveal Classes */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Modifiers for reveal directions */
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-slide-left.reveal-active {
+  transform: translateX(0) !important;
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-slide-right.reveal-active {
+  transform: translateX(0) !important;
+}
+
+.reveal-fade-in {
+  opacity: 0;
+  transform: none;
+  transition: opacity 1s ease;
+}
+.reveal-fade-in.reveal-active {
+  opacity: 1 !important;
+}
+
+/* Progress bar dynamic animation classes */
+.progress-bar-animated-custom {
+  width: 0% !important;
+  transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1) !important;
+}
+
+/* Extra micro-interactions */
+.btn {
+  transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* Custom progress-bar transition styles triggered by v-reveal */
+.reveal-init .progress-bar-custom-1 {
+  width: 0% !important;
+}
+.reveal-active .progress-bar-custom-1 {
+  width: 90% !important;
+  transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.reveal-init .progress-bar-custom-2 {
+  width: 0% !important;
+}
+.reveal-active .progress-bar-custom-2 {
+  width: 99% !important;
+  transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
